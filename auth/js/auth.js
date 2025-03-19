@@ -3,7 +3,7 @@ const loginForm = document.getElementById('loginForm');
 const submitBtn = document.getElementById('submitBtn');
 const chosenCiv = localStorage.getItem('selectedCivilization') || null;
 
-let betaTesters = [];
+let betaTesters = ['#Jqc6aJql' /* Dave Summer, lead developer */];
 
 export function checkBetaTester() {
     const loggedInUser = localStorage.getItem('loggedInUser');
