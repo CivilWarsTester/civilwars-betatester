@@ -1,5 +1,6 @@
 const registrationForm = document.getElementById('registerForm');
 const loginForm = document.getElementById('loginForm');
+const submitBtn = document.getElementById('submitBtn');
 const chosenCiv = localStorage.getItem('selectedCivilization') || null;
 
 function isEmailValid(email) {
@@ -92,7 +93,13 @@ if (loginForm) {
         alert('Login successful! Redirecting to CivilWars!');
     });
 }
-submitBtn.addEventListener('click', () => checkBetaTester());
+
+const isBetaTester = () => {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    const userTag = loggedInUser.playerTag;
+    if(betaTesters.includes(userTag)) return;
+    else window.location.href = './nonbeta.html';
+};
 
 document.addEventListener('DOMContentLoaded', () => {
     const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);

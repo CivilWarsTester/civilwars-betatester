@@ -32,7 +32,7 @@ export class XPCalculator {
             Object.values(buildings.houses).reduce((sum, lvl) => sum + lvl, 0);
         const avgBuildingLevel = totalBuildings > 0 ? totalLevels / totalBuildings : 0;
 
-        const afkXPAmount = Math.floor(playerData.level * totalBuildings * (avgBuildingLevel / 10));
+        const afkXPAmount = Math.round(playerData.level * totalBuildings * (avgBuildingLevel / 10));
         playerData.xp += afkXPAmount;
         playerData.level = this.getLevelFromXP(playerData.xp);
         localStorage.setItem('playerXP', playerData.xp);
