@@ -1,4 +1,5 @@
 import { Calculate } from './functions/Calculate.js';
+import { showPlayerTitle } from './UI/showPlayerTitle.js';
 import { updateResources } from './UI/updateResources.js';
 import { XPCalculator } from './functions/XPCalculator.js';
 import { saveGameState } from './functions/saveGamestate.js';
@@ -9,6 +10,8 @@ import { renderBuildingButtons } from './UI/renderBuildingButtons.js';
 
 const calc = new Calculate();
 const xpCalc = new XPCalculator();
+
+document.addEventListener('DOMContentLoaded', () => showPlayerTitle());
 
 setInterval(gameTick, 1000);
 setInterval(xpCalc.afkXPFarm, 60000);

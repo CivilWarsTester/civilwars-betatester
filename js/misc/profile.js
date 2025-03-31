@@ -10,9 +10,11 @@ const email = user.email;
 const civilization = chosenCiv;
 const level = user.level || 1;
 const xp = user.xp || 0;
+const title = user.title || '';
 const playerTag = user.playerTag;
 
 document.getElementById('profileUsername').textContent = username || `Guest ${playerTag}`;
+document.getElementById('playerTitle').textContent = title;
 document.getElementById('profileEmail').textContent = email;
 document.getElementById('profileCiv').textContent = civilization;
 document.getElementById('profileLevel').textContent = level;
